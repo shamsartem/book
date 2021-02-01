@@ -1,6 +1,6 @@
 [book]
 authors = ["Artsiom Shamsutdzinau"]
-language = "en"
+language = "ru"
 multilingual = false
 src = "src"
 title = "Обучение фронтенду"
