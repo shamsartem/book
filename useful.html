@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Полезные ссылки - Обучение фронтенду</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="foreword.html">Предисловие</a></li><li class="chapter-item expanded affix "><a href="intruduction.html">Вступление</a></li><li class="chapter-item expanded "><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li class="chapter-item expanded "><a href="preparation.html"><strong aria-hidden="true">2.</strong> Подготовка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vscode.html"><strong aria-hidden="true">2.1.</strong> VSCode</a></li><li class="chapter-item expanded "><a href="browsers.html"><strong aria-hidden="true">2.2.</strong> Браузеры</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chrome.html"><strong aria-hidden="true">2.2.1.</strong> Google Chrome</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="css.html"><strong aria-hidden="true">3.</strong> CSS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bem.html"><strong aria-hidden="true">3.1.</strong> BEM</a></li></ol></li><li class="chapter-item expanded "><a href="useful.html" class="active"><strong aria-hidden="true">4.</strong> Полезные ссылки</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Обучение фронтенду</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Полезные-ссылки"><a class="header" href="#Полезные-ссылки">Полезные ссылки</a></h1>
+<p>Многие из этих ссылок я сам не пробовал, поэтому пробуй, смотри понравится ли. Если не понравится - открывай другую ссылку или просто пробуй программировать что-то свое. Рекомендую все что тут есть хотя бы слегка попробовать, полистать что там предлагается</p>
+<ol>
+<li>
+<p>Большой сборник всего про обучение фронтенду <a href="https://www.notion.so/3801f4ec19e047b5a46abce23d427ca4#da562976fd384860b06fc3113c8f4a80">https://www.notion.so/3801f4ec19e047b5a46abce23d427ca4#da562976fd384860b06fc3113c8f4a80</a></p>
+</li>
+<li>
+<p>Нашёл такой <a href="https://roadmap.sh/frontend">https://roadmap.sh/frontend</a> материал на английском для обучения. Там же собраны и ссылки на ресурсы для самообучения</p>
+</li>
+<li>
+<p>Курс от Лофтскул по JS хорошо для практики зайдёт. Сам курс можно даже не смотреть, а сразу приступать к задачам. Там и два хороших приложения сделать можно: <a href="https://nnmclub.to/forum/viewtopic.php?t=1418734">https://nnmclub.to/forum/viewtopic.php?t=1418734</a></p>
+</li>
+<li>
+<p>Популярные сайты с практикой</p>
+<ul>
+<li><a href="https://learn.javascript.ru/">https://learn.javascript.ru/</a></li>
+<li><a href="http://old.code.mu/books/javascript/">http://old.code.mu/books/javascript/</a></li>
+<li><a href="http://htmlbook.ru/practical">http://htmlbook.ru/practical</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.frontendmentor.io/challenges">https://www.frontendmentor.io/challenges</a> задачи разного уровня сложности. после публикации кода на GitHub на этом же сайте можно получить фидбек на своё решение задачи.</p>
+</li>
+<li>
+<p><a href="magnet:?xt=urn:btih:42NJTO2D5G4XXQYEMTRHS2UWOMIQVDLO&amp;dn=%5BUdemy%5D%20%5B%D0%98%D0%B2%D0%B0%D0%BD%20%D0%9F%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%5D%20%D0%9F%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9%20%D0%BA%D1%83%D1%80%D1%81%20%D0%BF%D0%BE%20JavaScript%20%2B%20React%20-%20%D1%81%20%D0%BD%D1%83%D0%BB%D1%8F%20%D0%B4%D0%BE%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B0&amp;tr=http%3A%2F%2Fbt3.t-ru.org%2Fann0">magnet:?xt=urn:btih:42NJTO2D5G4XXQYEMTRHS2UWOMIQVDLO&amp;dn=%5BUdemy%5D%20%5B%D0%98%D0%B2%D0%B0%D0%BD%20%D0%9F%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%5D%20%D0%9F%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9%20%D0%BA%D1%83%D1%80%D1%81%20%D0%BF%D0%BE%20JavaScript%20%2B%20React%20-%20%D1%81%20%D0%BD%D1%83%D0%BB%D1%8F%20%D0%B4%D0%BE%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B0&amp;tr=http%3A%2F%2Fbt3.t-ru.org%2Fann</a> magnet ссылка для скачки через torrent курса на Udemy от Иван Петриченко &quot;Полный курс по JavaScript + React - с нуля до результата&quot;. Если хотите купить этот курс - <a href="https://www.udemy.com/course/javascript_full/?admitad_uid=5abe7c00e547a094bf1f41e790c54432&amp;deal_code=&amp;publisher_id=1045339&amp;utm_campaign=Admitad-default&amp;utm_content=Textlink&amp;utm_medium=udemyads&amp;utm_source=aff-campaign&amp;utm_term=Homepage&amp;website_id=1118709">https://www.udemy.com/course/javascript_full/?admitad_uid=5abe7c00e547a094bf1f41e790c54432&amp;deal_code=&amp;publisher_id=1045339&amp;utm_campaign=Admitad-default&amp;utm_content=Textlink&amp;utm_medium=udemyads&amp;utm_source=aff-campaign&amp;utm_term=Homepage&amp;website_id=1118709</a></p>
+</li>
+<li>
+<p><a href="http://webmasters.teamdev.com/">http://webmasters.teamdev.com/</a> По верстке</p>
+</li>
+<li>
+<p><a href="https://stepik.org/course/38218/promo">https://stepik.org/course/38218/promo</a> Базовый курс по frontend</p>
+</li>
+<li>
+<p><a href="https://t.me/technobooks/322">https://t.me/technobooks/322</a> Говорят что неплохая книга</p>
+</li>
+<li>
+<p><a href="https://www.linkedin.com/feed/update/urn:li:activity:6790595510219640832/">https://www.linkedin.com/feed/update/urn:li:activity:6790595510219640832/</a> Хорошие варианты для первых проектов</p>
+</li>
+<li>
+<p><a href="http://ru.code-basics.com/languages/javascript">http://ru.code-basics.com/languages/javascript</a> Самые основы js</p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="bem.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="bem.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

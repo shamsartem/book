@@ -1,0 +1,588 @@
+<!DOCTYPE HTML>
+<html lang="ru" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Обучение фронтенду</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="foreword.html">Предисловие</a></li><li class="chapter-item expanded affix "><a href="intruduction.html">Вступление</a></li><li class="chapter-item expanded "><a href="html.html"><strong aria-hidden="true">1.</strong> HTML</a></li><li class="chapter-item expanded "><a href="preparation.html"><strong aria-hidden="true">2.</strong> Подготовка</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="vscode.html"><strong aria-hidden="true">2.1.</strong> VSCode</a></li><li class="chapter-item expanded "><a href="browsers.html"><strong aria-hidden="true">2.2.</strong> Браузеры</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chrome.html"><strong aria-hidden="true">2.2.1.</strong> Google Chrome</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="css.html"><strong aria-hidden="true">3.</strong> CSS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="bem.html"><strong aria-hidden="true">3.1.</strong> BEM</a></li></ol></li><li class="chapter-item expanded "><a href="useful.html"><strong aria-hidden="true">4.</strong> Полезные ссылки</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Обучение фронтенду</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="Предисловие"><a class="header" href="#Предисловие">Предисловие</a></h1>
+<p>Главное о чем, как я считаю, стоит думать на протяжении всей жизни - получаю ли я удовольствие от того чем я занимаюсь. Поэтому пару слов о профессии фронтендера, чтобы ты мог начинать делать выводы о том понравится ли тебе это.</p>
+<p>Профессия творческая. надо придумывать, изобретать, догадываться. Я бы описал это как &quot;мастерить&quot;, только не руками а словами - и главное - радоваться что оно все заработало</p>
+<p>Кроме изобретения всяких штук и написания кода ещё много чего есть. Работа зачастую предполагает сидение за компьютером целыми днями, общение с дизайнером, который нарисовал то, что тебе предстоит воплощать в жизнь, с менеджерами, которые будут говорить как они хотят чтоб оно работало и, в идеале, делать так что б вам ничего не мешало работать. Ну и конечно общение с другими программистами в том числе с бэкэндом (программисты которые занимаются серверами). Очень много времени реальной работы завязано на умелое пользование гуглом. По сути это основной метод работы - гуглить. Даже опытные программисты гуглят постоянно и вообще во многом это суть всей работы, потому что запомнить все просто никак не возможно и к тому же постоянно появляется что-то новое, так что надо уметь это делать, поэтому учись и привыкай. Будьте готовы к тому, что работая программистом учиться придется скорее всего на протяжении всей карьеры, потому что сфера не стоит на месте и не двигаясь никуда вы будете автоматически отставать. Ещё большой кусок времени уходит на <em>баги</em> (ошибки в коде), решение для некоторых можно и нагуглить, но очень многие требуют большой внимательности, скрупулезности и умения изобретательно тыкать пальцем в небо чтоб хоть как-то <em>баг</em> решить. Вообще скрупулезность черта не обязательная в целом, но при поиске работы важная, как и в других профессиях перфекционизм ценится, так как возможно, что даже больше времени уходит на <strong>чтение</strong> кода (и своего и чужого), чем на <strong>написание</strong>. Поэтому чем лучше написан код, тем легче потом в нем разобраться. Через пару месяцев если почитаешь свой код - кажется что кто-то другой писал и уже ничего не понятно, нужно заново разбираться как оно написано, поэтому в твоих же интересах писать максимально предсказуемо и понятно. Вот примерно че то такое тебя ждёт если пойдешь по этому пути</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="Вступление"><a class="header" href="#Вступление">Вступление</a></h1>
+<p>Основные языки фронтенда это HTML, CSS и JS. С ними нужно обязательно будет разобраться</p>
+<p>Главное конечно это практика поэтому очень важно соблюдать баланс теории и практики. Я предлагаю изучать теорию и сразу же закреплять ее на практике написанием реального кода</p>
+<p>Главы в книге расположены более менее в порядке в котором, как я считаю, стоит их читать, но конечно можно перескакивать как угодно - главное что б было интересно и чувствовалось что ты не стоишь на месте и узнаешь что-то новое. В программировании очень много разного чем можно заняться, поэтому ищи то, что тебе интереснее всего.</p>
+<p>В книге будет много ссылок на другие сайты - по ним надо переходить, добавлять в закладки в браузере, читать. По любой теме, по которой что-то не понятно - легко можно нагуглить и почитать интересующие вопросы, благо обучающих сайтов по фронтенду просто бесконечно. Эта книга скорее просто обозначает по какому пути следует идти и что нужно учить, а уже как это учить и насколько глубоко - каждый решает сам. Ты будешь более ценным специалистом имея более глубокие знания в любой из тем, которые я предлагаю к изучению</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="html"><a class="header" href="#html">HTML</a></h1>
+<p>HTML - очень простой язык. Его часто сравнивают со скелетом или структурой страницы. Состоит HTML из тегов. Например вот тег div с текстом &quot;Привет&quot; внутри</p>
+<pre><code class="language-html">&lt;div&gt;Привет&lt;/div&gt;
+</code></pre>
+<p><code>div</code> - это название тега. знаки больше <code>&lt;</code> и меньше <code>&gt;</code> просто окружают название тега. Первый тег <code>&lt;div&gt;</code> называется открывающим, второй <code>&lt;/div&gt;</code> закрывающим. Есть еще один тип тега - самозакрывающийся, например</p>
+<pre><code class="language-html">&lt;img src=&quot;cat.jpg&quot; alt=&quot;кот&quot; /&gt;
+</code></pre>
+<p><code>img</code> - это название тега. <code>src</code> и <code>alt</code> - это атрибуты. Атрибуты могут быть у любого тега. В данном случае тег <code>img</code> - это картинка. <code>src</code> атрибут имеет значение <code>cat.jpg</code> - это название файла, который лежит в той же папке, что и html файл. <code>alt</code> атрибут имеет значение <code>кот</code>. <code>alt</code> атрибут используют на картинках для того что бы дать имя картинке. Это имя будут использовать:</p>
+<ol>
+<li>Гугл, когда его программы будут читать ваш html. Потом в поиске гугла по названию картинки вы сможете ее увидеть</li>
+<li>Название поможет слепому человеку понять что изображено на картинке</li>
+<li>Если вы удалите файл <code>cat.jpg</code> с компьютера то название будет показано на страничке вместо самой картинки</li>
+</ol>
+<p>Сразу все это не запомнишь, и запоминать не обязательно - всегда можно загуглить, но постепенно все вот эти подробности выучить проблем нет никаких, они будут важны позже.</p>
+<p>Обрати внимание на символ <code>/</code> в конце тега <code>img</code> - этот символ не обязателен в самозакрывающихся тегах, но можешь его оставлять - хуже не будет.</p>
+<p>Весь HTML код состоит из этих тегов с атрибутами. теги можно класть друг в друга, например</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ru&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Этот текст ты увидишь в названии вкладки в браузере&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;файл-со-стилями.css&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;header class=&quot;header&quot;&gt;
+      &lt;h1&gt;Заголовок&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;section class=&quot;paragraph-section&quot;&gt;
+      &lt;h2&gt;Заголовок поменьше&lt;/h2&gt;
+      &lt;p&gt;Параграф&lt;/p&gt;
+      &lt;p&gt;Еще параграф&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;list-section&quot;&gt;
+      &lt;h2&gt;Ниже идет ненумерованный список покупок&lt;/h2&gt;
+      &lt;ul class=&quot;list&quot;&gt;
+        &lt;li&gt;Хлеб&lt;/li&gt;
+        &lt;li&gt;Помидоры&lt;/li&gt;
+        &lt;li&gt;Вода&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Первая строка <code>&lt;!DOCTYPE html&gt;</code> должна быть в каждой страничке. Она нужна просто что б браузер понимал на каком языке дальше написан код</p>
+<p>Затем мы видим тег <code>&lt;head&gt;&lt;/head&gt;</code> и пониже тег <code>&lt;body&gt;&lt;/body&gt;</code> - они тоже должны быть в каждой страничке</p>
+<p>В теге <code>&lt;head&gt;&lt;/head&gt;</code> - лежит техническая информация, то что на самой страничке мы не увидим.</p>
+<p>В теге <code>&lt;body&gt;&lt;/body&gt;</code> - лежат другие теги которые которые уже можно увидеть на странице.</p>
+<p>тегов разнообразных очень много. За раз выучить не получится. Почитай, посмотри какие бывают, для чего используются. Важно понимать что главный смысл тегов - это суть которою они несут (весь внешний вид настраивается при помощи другого языка - CSS). Например суть тега <code>&lt;ul&gt;&lt;/ul&gt;</code> - ненумерованный список. <code>&lt;li&gt;&lt;/li&gt;</code> тег - это пункт списка и он обязательно должен лежать внутри <code>&lt;ul&gt;&lt;/ul&gt;</code> или <code>&lt;ol&gt;&lt;/ol&gt;</code> (тег для нумерованных списков). <code>&lt;h1&gt;&lt;/h1&gt;</code>, <code>&lt;h2&gt;&lt;/h2&gt;</code> и.т.д до <code>&lt;h6&gt;&lt;/h6&gt;</code> - это заголовки, подзаголовки и.т.д. <code>&lt;p&gt;&lt;/p&gt;</code> - тег для параграфов.</p>
+<p>Есть несколько правил по поводу того какие теги можно класть внутрь каких. Помнить все это опять таки не обязательно и запомнить все невозможно, поэтому самое простое и надежное - первое время когда будешь писать html обязательно проверяй его валидность например на сайте <a href="https://validator.w3.org/#validate_by_upload">w3.org</a> и исправляй все ошибки о которых на этом сайте написано.</p>
+<p>Атрибутов у тегов разнообразных еще больше, более того можно придумывать свои - поэтому к этой теме тоже придется возвращаться много раз на протяжении карьеры. Например <a href="https://html5book.ru/html-attributes/">вот тут</a> некоторые из них. На этом сайте тоже много чего интересного, можно читать и перечитывать и обязательно использовать.</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="Подготовка"><a class="header" href="#Подготовка">Подготовка</a></h1>
+<p>Абсолютно весь код пишут в обычных текстовых файлах. Поэтому если хочешь - ты можешь открывать программу Блокнот и начинать писать код. Вместо расширения .txt используют расширения .html, .css и .js - но не смущайся, файлы все равно простые, текстовые.</p>
+<p>Попробуй в обычном проводнике создать файл <code>index.txt</code> и переименуй в <code>index.html</code>. Открой файл при помощи программы Блокнот. Скопируй любой html код из главы HTML в этот файл. Не забудь сохранить файл. Перетащи этот файл в браузер. Браузер его откроет и ты увидишь как браузер отображает этот код.</p>
+<p>Можно писать код и в программе Блокнот, но чтобы было удобнее и быстрее - есть специальные программы для написания кода. На данный момент одна из самых популярных называется VSCode. С ней я и предлагаю начать работать</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="vscode"><a class="header" href="#vscode">VSCode</a></h1>
+<p>Устанавливай VSCode как любую другую программу. Загугли ее название, скачай, установи - она бесплатная.</p>
+<p>Чтобы было легче ориентироваться в ней сразу предлагаю установить дополнения (еще их называют расширения или плагины). Это не обязательно, но работать с кодом будет немного приятнее, не переживай если что-то установить не получится.</p>
+<p>Установить их очень легко:</p>
+<ol>
+<li>Открой VSCode</li>
+<li>Нажми сочетание клавиш <code>Ctrl + P</code></li>
+<li>Вставь например вот такой текст <code>ext install MS-CEINTL.vscode-language-pack-ru</code></li>
+<li>Нажми клавишу <code>Enter</code></li>
+</ol>
+<p>Текст из пункта 3 легко гуглится. Эта команда устанавливет расширение с русским языком для VSCode. После того как плагин установится скорее всего VSCode попросит подтвердить смену языка, нажимай Yes</p>
+<p>Аналогичным путем предлагаю поставить еще пару расширений</p>
+<ul>
+<li>
+<p><code>ext install formulahendry.auto-close-tag</code> расширение помогает закрывать теги, что б не закрывать их руками</p>
+</li>
+<li>
+<p><code>ext install formulahendry.auto-rename-tag</code> помогает переименовать один тег в другой (меняя название одного из тегов будет меняться сразу и открывающий тег и закрывающий)</p>
+</li>
+<li>
+<p><code>ext install streetsidesoftware.code-spell-checker</code> подчеркивает орфографические ошибки что б вы случайно не опечатались</p>
+</li>
+<li>
+<p><code>ext install streetsidesoftware.code-spell-checker-russian</code> то же самое но для русского языка</p>
+</li>
+<li>
+<p><code>ext install pkief.material-icon-theme</code> иконки для фалов, что бы легче ориентироваться когда будет много файлов</p>
+</li>
+<li>
+<p><code>ext install esbenp.prettier-vscode</code> используется для автоматического форматирования кода. Лично я считаю что код делать внешне красивым программист не должен - это можно делать в автоматическом режиме при этом экономя кучу времени</p>
+</li>
+</ul>
+<p>Открой какую-нибудь папку в VSCode. Для этого можно нажать сочетание клавиш <code>Ctrl + O</code></p>
+<p>Можно потыкать во всякие меню в VSCode - там много полезного. Слева есть кнопочки которыми можно поменять содержимое боковой панели</p>
+<ul>
+<li>Значок с файлами - это файловый браузер (как проводнике что б можно было видеть файлы и папки)</li>
+<li>Значок с лупой - это поиск по всем файлам и папкам (часто используется, удобнее просто нажать <code>Ctrl + Shift + F</code>)</li>
+<li>Значок с квадратиками - это поиск по расширениям (плагинам). Их великое множество и потом по мере надобности и на свой вкус сможешь поставить какие захочешь</li>
+</ul>
+<p>Еще у VSCode есть настройки. Можно в них попасть через верхнее меню, а можно по сочетанию клавиш <code>Ctrl + ,</code>
+Там можно много чего настроить под себя, но я предлагаю для начала пойти более простым путем.</p>
+<ol>
+<li>Зайди в настройки (например нажав <code>Ctrl + ,</code>)</li>
+<li>Найди иконку с файликом и стрелочкой в правом верхнем углу экрана и нажми ее</li>
+<li>откроется файл settings.json</li>
+</ol>
+<p>В этом файле лежат все настройки VSCode но они представлены в виде вот такого конфига, например</p>
+<pre><code class="language-json">{
+  &quot;workbench.iconTheme&quot;: &quot;material-icon-theme&quot;,
+  &quot;files.autoSave&quot;: &quot;onFocusChange&quot;,
+  &quot;editor.formatOnSave&quot;: true,
+  &quot;editor.tabSize&quot;: 2,
+  &quot;editor.minimap.enabled&quot;: false,
+  &quot;editor.codeActionsOnSave&quot;: {
+    &quot;source.fixAll&quot;: true
+  },
+  &quot;[jsonc]&quot;: {
+    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;
+  },
+  &quot;[javascript]&quot;: {
+    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;
+  },
+  &quot;[html]&quot;: {
+    &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;
+  },
+  &quot;cSpell.language&quot;: &quot;en,ru&quot;
+}
+</code></pre>
+<p>Можешь содержимое файла settings.json заменить на то, что написано выше, и сохранить файл. Затем закрой и открой программу на всякий случай - должны будут поменяться иконки у файлов, будет включено автоматическое сохранение файлов (я например постоянно забываю сохранить и потом не могу понять почему ничего не работает). Должно работать автоматическое форматирование кода и увидишь что оно подчеркивает все твои орфографические ошибки.</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="Браузеры"><a class="header" href="#Браузеры">Браузеры</a></h1>
+<p>Браузеры, как ты, надеюсь, знаешь - это программы, используя которые люди пользуются интернетом. Для фронтендера это основное место пребывания</p>
+<p>Браузеров есть много но все они в целом стремятся работать абсолютно одинаково, чтобы запустив один и тот же код в любом браузере - получить ровно точно такой же результат. Часто, к сожалению, так не происходит и нужно выдумывать всякие уловки и изобретать обходные пути что б достичь того что бы все выглядело и работало абсолютно одинаково во всех браузерах.</p>
+<p>На данный момент самый популярный и, как мне кажется, заслуженно - браузер Google Chrome. Этот браузер обычно очень любят фронтенедеры потому что с ним обычно возникает меньше всего проблем, ведет себя в целом более предсказуемо чем остальные. Google Chrome использует в качестве основы браузер Chromium, который тоже написан компанией Google но при этом является открытой и бесплатной технологией, поэтому многие другие компании тоже используют его в качестве основы для своих браузеров (Opera, Yandex, Mail.ru, Brave и c недавних пор Microsoft Edge - браузер встроенный в Windows). С точки зрения фронтендера - это хорошие новости, потому что не нужно учитывать особенности такого большого количества браузеров и при этом все везде будет работать. Второй по популярности браузер это Apple Safari. В целом он имеет схожее происхождение с Chromium, но кучу своих проблем и особенностей. Абсолютно не похожий на предыдущие по своему происхождению - браузер Mozilla Firefox. Он считается независимым браузером, так как не принадлежит какой-то коммерческой компании. При всем при том что Firefox целиком написан абсолютно другими людьми - работает он не менее предсказуемо, чем два предыдущий браузера и проблем с ним больших обычно не возникает. Самые ненавистные браузеры большинства фронтендеров которые часто делают не то что ожидаешь - Internet Explorer и старая версия Microsoft Edge, которая не была основана на Chromium. Надеюсь в вашей работе не будет требований поддерживать работу вашего сайта в этих браузерах.</p>
+<p>Я настоятельно советую разрабатывать сайты с использованием Google Chrome но при этом стоит проверять время от времени, что то, что ты написал работает точно так же и в других браузерах.</p>
+<p>Кроме этого есть еще браузеры для мобильных телефонов. Для Android телефонов большая часть браузеров похожи на мобильную версию Chrome браузера, но есть и мобильная версия Firefox. Для iOS телефонов - мобильная версия Safari. Эти браузеры тоже очень популярны и тоже имеют свои особенности. Чаще всего разработку мы ведем на компьютере и просто смотрим в маленьком разрешении чтобы проверить то, как оно будет выглядеть на телефоне. Но гарантий это не дает. Если мы хотим надежно проверить что все работает - нужно проверять на реальных устройствах, то есть брать телефон открывать в нем твой сайт и смотреть что все выглядит и работает как ожидается.</p>
+<p>Насколько браузеры популярны и в каких странах можно посмотреть например вот тут <a href="https://gs.statcounter.com/">gs.statcounter.com</a></p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="google-chrome"><a class="header" href="#google-chrome">Google Chrome</a></h1>
+<p>Если у тебя этот браузер не установлен - открой Internet Explorer или Edge, загугли и установи его поскорее.</p>
+<p>В браузерах есть специальные инструменты для разработчиков, используя которые гораздо легче понять что происходит на вашей страничке. Умение пользоваться этими инструментам очень важная часть работы любого фронтендера.</p>
+<p>Инструменты разработчика в большинстве браузеров это скрытая боковая панель. Открыть ее можно например по кнопке F12</p>
+<p>В инструментах разработчика удобно экспериментировать с HTML, CSS и JS. Единственный момент это, что все, что ты напишешь, поменяешь в HTML, CSS или JS коде используя инструменты разработчика - никуда не сохраняется и пропадает при перезагрузке страницы (я использую сочетание клавиш <code>Shift + Ctrl + R</code> что бы перезагрузить страничку и подгрузить последние изменения в коде - привыкай к этому сочетанию клавиш - придется каждый раз этим пользоваться чтобы смотреть как браузер интерпретировал новый код, который ты написал)</p>
+<p>Можешь попробовать открыть html файлик в браузере и нажать F12 - ты увидишь html структуру твоей странички и сможешь ее поковырять и изменить прямо в браузере.</p>
+<p>При разработке у меня обычно эта боковая панель всегда открыта, там много чего интересного, постепенно ты познакомишься с этим и научишься пользоваться.</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="css"><a class="header" href="#css">CSS</a></h1>
+<p>СSS - это язык который используют для того чтобы задавать внешний вид HTML.</p>
+<p>По своей сути CSS язык не сложный. Выглядит он так</p>
+<pre><code class="language-css">button {
+  width: 300px;
+  height: 20px;
+}
+
+.red-button {
+  background-color: red;
+  width: 350px;
+  height: 25px;
+}
+
+#signIn {
+  background-color: blue;
+  width: 200px;
+  height: 15px;
+}
+</code></pre>
+<p>И мы хотим задать внешний вид например вот такому HTML</p>
+<pre><code class="language-html">&lt;button&gt;Узнать больше&lt;/button&gt;
+&lt;button id=&quot;signIn&quot; class=&quot;red-button&quot;&gt;Войти&lt;/button&gt;
+&lt;button class=&quot;red-button&quot;&gt;Зарегистрироваться&lt;/button&gt;
+&lt;a class=&quot;red-button&quot; href=&quot;/&quot;&gt;Перейти на главную&lt;/a&gt;
+</code></pre>
+<p>Главное что нужно понять - язык состоит из двух основных частей - селекторы и стили. Селекторы нужны для того что бы мы могли объяснить браузеру внешний вид <strong>каких тегов</strong> мы хотим задать внутри фигурных скобочек (<code>{}</code>).</p>
+<h2 id="Селекторы"><a class="header" href="#Селекторы">Селекторы</a></h2>
+<p>В примере выше это все, что написано перед символами <code>{</code>, а именно: <code>button</code>, <code>.red-button</code> и <code>#signIn</code>.</p>
+<ol>
+<li>
+<p>Селектор <strong>тега</strong> (в примере: <code>button</code>). На первой строке CSS кода мы говорим что хотим задать внешний вид всем тегам <code>button</code>. Это значит что мы зададим внешний вид кнопкам &quot;Узнать больше&quot;, &quot;Войти&quot; и &quot;Зарегистрироваться&quot;, Ссылка &quot;Перейти на главную&quot; не будет стилизована, потому что сделана при помощи другого тега - <code>a</code>.</p>
+</li>
+<li>
+<p>Селектор <strong>класса</strong> (в примере: <code>.red-button</code>). На 6 строке CSS кода мы использовали селектор <code>.red-button</code> потому что мы хотим задать внешний вид всем тегам c атрибутом <code>class=&quot;red-button&quot;</code> (обрати внимание на точку в CSS перед текстом &quot;red-button&quot; - эта точка дает понять браузеру что мы имеем ввиду именно атрибут <code>class</code> у тегов, что это селектор <strong>класса</strong>). Стили внутри фигурных скобок после надписи <code>.red-button</code> в CSS применятся к кнопкам &quot;Войти&quot; и &quot;Зарегистрироваться&quot; а еще к ссылке &quot;Перейти на главную&quot;.</p>
+</li>
+<li>
+<p>Селектор <strong>идентификатора</strong> (в примере: <code>#signIn</code>) мы используем чтобы задать внешний вид тегу с атрибутом <code>id=&quot;signIn&quot;</code> (обрати внимание на символ <code>#</code> в CSS - он говорит нам о том что это атрибут <code>id</code>). Стили внутри фигурных скобок после надписи <code>#signIn</code> в CSS применятся только к кнопке &quot;Войти&quot;.</p>
+</li>
+</ol>
+<p>Кроме описанных выше селекторов есть и другие. Более полный список можно посмотреть на этом сайте <a href="http://htmlbook.ru/css/selector">htmlbook.ru</a>. Там тоже много полезного можно почитать кроме этого.</p>
+<h2 id="Стили"><a class="header" href="#Стили">Стили</a></h2>
+<p>Стилей в CSS очень много разнообразных, как они работают и что делают и особенности работы их в разных браузерах можно учить годами, но основное что нужно знать можно выучить очень быстро.</p>
+<p>Стили всегда имеют вид <code>название-стиля: значение;</code>. Символы <code>:</code> и <code>;</code> обязательны для каждого стиля.</p>
+<p>В примере выше, все теги с <code>class=&quot;red-button&quot;</code> будут иметь стили: <code>background-color: red;</code> (фон красного цвета), <code>width: 350px;</code> (ширину 350 пикселей), <code>height: 25px;</code> (высоту 25 пикселей). Аналогично для тега с атрибутом <code>id=&quot;signIn&quot;</code> и для тегов <code>button</code></p>
+<p>Давай обратим внимание на кнопку &quot;Войти&quot; для нее применяются все стили, которые мы написали в CSS, потому что у нее тег <code>button</code>, есть класс <code>red-button</code> и id <code>signIn</code>. Как же, все таки, браузер отобразит нашу кнопку в конечном счете, какого цвета она будет, какой высоты и ширины? Чтобы ответить на этот вопрос нужно знать <strong>приоритеты</strong> браузера, а именно какие селекторы он считает более важными чем другие. Почитать про это можно например вот <a href="http://htmlbook.ru/samcss/kaskadirovanie">тут</a></p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="bem"><a class="header" href="#bem">BEM</a></h1>
+<p>BEM - это один из самых популярных способов как организовать весь CSS на сайте</p>
+<p>Идею BEM придумали что б меньше путаться, сделать CSS, который мы пишем более предсказуемым, более легким для чтения.</p>
+<ol>
+<li>BEM предполагает что ВСЕ стили для сайта мы пишем используя <strong>ТОЛЬКО</strong> классы</li>
+<li>Все названия классов уникальные и никогда не повторяются</li>
+<li>Запрещается использование родительских селекторов, &gt;, ~ и других. Только классы. Иногда допускают использование :nth-child, :first-child</li>
+</ol>
+<p>Но как нам гарантировать уникальность названий для классов?</p>
+<p>BEM (БЭМ) - расшифровывается так</p>
+<p>Б - блок
+Э - элемент
+М - модификатор</p>
+<p>Порядок придумывания названий для классов такой:</p>
+<ol>
+<li>Смотришь на дизайн странички которую собираешься верстать и выделяешь любую часть которую хоть как-то можно назвать БЛОКОМ (карточка, хэдер, футер, виджет, секция страницы, кнопка, форма)</li>
+</ol>
+<p>Например мы верстаем карточку:</p>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;div&gt;
+    &lt;div&gt;
+      &lt;button&gt;
+        &lt;span&gt;hello&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;world&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ol start="2">
+<li>
+<p>Выбираешь любое слово или несколько-слов-через-тире что б дать название этому БЛОКУ (например header, main-header, button, bottom-categories-header, primary-card) - это твоя буква Б в в аббревиатуре БЭМ</p>
+</li>
+<li>
+<p>берешь самый наружный тэг и даешь ему класс, который называется просто этим словом Б</p>
+</li>
+</ol>
+<p>Например мы решили назвать наш блок <code>main-card</code>:</p>
+<pre><code class="language-html">&lt;div class=&quot;main-card&quot;&gt;
+  &lt;div&gt;
+    &lt;div&gt;
+      &lt;button&gt;
+        &lt;span&gt;hello&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div&gt;world&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ol start="4">
+<li>
+<p>Всему, что внутри этого тэга с классом Б, придумываешь название элемента (буква Э в аббревиатуре БЭМ) (например container, section, button, button-text - короче любое слово или несколько-слов-через-тире)</p>
+</li>
+<li>
+<p>Все названия классов внутри твоего блока должны иметь форму &quot;название-блока__название-элемента&quot; и никак иначе. Всегда в названии должно быть название блока + два нижних подчеркивания + название элемента, например</p>
+</li>
+</ol>
+<pre><code class="language-html">&lt;div class=&quot;main-card&quot;&gt;
+  &lt;div class=&quot;main-card__container&quot;&gt;
+    &lt;div class=&quot;main-card__top-section&quot;&gt;
+      &lt;button class=&quot;main-card__button&quot;&gt;
+        &lt;span class=&quot;main-card__button-text&quot;&gt;hello&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main-card__bottom-section&quot;&gt;world&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ol start="7">
+<li><strong>Только</strong> в том случае когда ты хочешь как-то слегка поменять внешний вид блока или элемента - только тогда ты используешь букву М из аббревиатуры БЭМ создавая классы которые содержат одно нижнее подчеркивание. Классы которые содержат одно нижнее подчеркивание не могут быть сами по себе. Они всегда должны быть рядом с классом элемента или самого блока. Например</li>
+</ol>
+<p>Так быть не должно:</p>
+<pre><code class="language-html">&lt;button class=&quot;main-card__button_primary&quot;&gt;hello&lt;/button&gt;
+</code></pre>
+<pre><code class="language-html">&lt;footer class=&quot;footer_big&quot;&gt;&lt;/footer&gt;
+</code></pre>
+<p>Вот так правильно:</p>
+<pre><code class="language-html">&lt;button class=&quot;main-card__button main-card__button_primary&quot;&gt;world&lt;/button&gt;
+</code></pre>
+<pre><code class="language-html">&lt;footer class=&quot;footer footer_big&quot;&gt;&lt;/footer&gt;
+</code></pre>
+<p>Например предположим что в нашей карточке должна появится вторая кнопка с практически точно такими же стилями как кнопка с классом <code>main-card__button</code> но красного цвета. Это идеальный пример когда мы используем модификатор:</p>
+<pre><code class="language-html">&lt;div class=&quot;main-card&quot;&gt;
+  &lt;div class=&quot;main-card__container&quot;&gt;
+    &lt;div class=&quot;main-card__top-section&quot;&gt;
+      &lt;button class=&quot;main-card__button&quot;&gt;
+        &lt;span class=&quot;main-card__button-text&quot;&gt;hello&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button class=&quot;main-card__button main-card__button_primary&quot;&gt;
+        &lt;span class=&quot;main-card__button-text&quot;&gt;!&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;main-card__bottom-section&quot;&gt;world&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ol start="7">
+<li>Внутри БЭМ блоков могут лежать другие БЭМ блоки. Например представим что у тебя есть блок header и блок button который ты по всему сайту используешь. Вот валидный БЭМ для этого</li>
+</ol>
+<pre><code class="language-html">&lt;nav class=&quot;header&quot;&gt;
+  &lt;div class=&quot;header__container&quot;&gt;
+    &lt;div class=&quot;header__menu&quot;&gt;
+      &lt;button class=&quot;button&quot;&gt;
+        &lt;span class=&quot;button__text&quot;&gt;hello&lt;/span&gt;
+        &lt;span class=&quot;button__text button__text_blue&quot;&gt;world&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;header__address&quot;&gt;
+      &lt;div class=&quot;header__map&quot;&gt;&lt;/div&gt;
+      &lt;span class=&quot;header__city-name&quot;&gt;Минск&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+<ol start="8">
+<li>
+<p>Не используй названия для классов типа <code>название-блока__название-подблока_название-элемента</code> и <code>блок-родителя__подблок-подблок-подблока_подблок-подблок-подблока_элемент__элемент-элемента</code> итд. <strong>ТОЛЬКО</strong> <code>название-блока__название-элемента</code>. У тебя классы должны называться так что в них только два нижних подчеркивания и они стоят только между названием блока и названием элемента. Все. Плюс в случае необходимости классы модификаторы, которые имеют одно нижнее подчеркивание</p>
+</li>
+<li>
+<p>Реальные примеры кода - лучше тысячи слов. Поэтому погугли, посмотри примеры того как пишут в стиле БЭМ. Посмотри видео на ютуб - там много обучающих видосов по этой теме. Я уверен что посмотрев и попробовав несколько раз - обязательно поймешь и будешь пользоваться без проблем</p>
+</li>
+</ol>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="Полезные-ссылки"><a class="header" href="#Полезные-ссылки">Полезные ссылки</a></h1>
+<p>Многие из этих ссылок я сам не пробовал, поэтому пробуй, смотри понравится ли. Если не понравится - открывай другую ссылку или просто пробуй программировать что-то свое. Рекомендую все что тут есть хотя бы слегка попробовать, полистать что там предлагается</p>
+<ol>
+<li>
+<p>Большой сборник всего про обучение фронтенду <a href="https://www.notion.so/3801f4ec19e047b5a46abce23d427ca4#da562976fd384860b06fc3113c8f4a80">https://www.notion.so/3801f4ec19e047b5a46abce23d427ca4#da562976fd384860b06fc3113c8f4a80</a></p>
+</li>
+<li>
+<p>Нашёл такой <a href="https://roadmap.sh/frontend">https://roadmap.sh/frontend</a> материал на английском для обучения. Там же собраны и ссылки на ресурсы для самообучения</p>
+</li>
+<li>
+<p>Курс от Лофтскул по JS хорошо для практики зайдёт. Сам курс можно даже не смотреть, а сразу приступать к задачам. Там и два хороших приложения сделать можно: <a href="https://nnmclub.to/forum/viewtopic.php?t=1418734">https://nnmclub.to/forum/viewtopic.php?t=1418734</a></p>
+</li>
+<li>
+<p>Популярные сайты с практикой</p>
+<ul>
+<li><a href="https://learn.javascript.ru/">https://learn.javascript.ru/</a></li>
+<li><a href="http://old.code.mu/books/javascript/">http://old.code.mu/books/javascript/</a></li>
+<li><a href="http://htmlbook.ru/practical">http://htmlbook.ru/practical</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.frontendmentor.io/challenges">https://www.frontendmentor.io/challenges</a> задачи разного уровня сложности. после публикации кода на GitHub на этом же сайте можно получить фидбек на своё решение задачи.</p>
+</li>
+<li>
+<p><a href="magnet:?xt=urn:btih:42NJTO2D5G4XXQYEMTRHS2UWOMIQVDLO&amp;dn=%5BUdemy%5D%20%5B%D0%98%D0%B2%D0%B0%D0%BD%20%D0%9F%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%5D%20%D0%9F%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9%20%D0%BA%D1%83%D1%80%D1%81%20%D0%BF%D0%BE%20JavaScript%20%2B%20React%20-%20%D1%81%20%D0%BD%D1%83%D0%BB%D1%8F%20%D0%B4%D0%BE%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B0&amp;tr=http%3A%2F%2Fbt3.t-ru.org%2Fann0">magnet:?xt=urn:btih:42NJTO2D5G4XXQYEMTRHS2UWOMIQVDLO&amp;dn=%5BUdemy%5D%20%5B%D0%98%D0%B2%D0%B0%D0%BD%20%D0%9F%D0%B5%D1%82%D1%80%D0%B8%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%5D%20%D0%9F%D0%BE%D0%BB%D0%BD%D1%8B%D0%B9%20%D0%BA%D1%83%D1%80%D1%81%20%D0%BF%D0%BE%20JavaScript%20%2B%20React%20-%20%D1%81%20%D0%BD%D1%83%D0%BB%D1%8F%20%D0%B4%D0%BE%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%B0&amp;tr=http%3A%2F%2Fbt3.t-ru.org%2Fann</a> magnet ссылка для скачки через torrent курса на Udemy от Иван Петриченко &quot;Полный курс по JavaScript + React - с нуля до результата&quot;. Если хотите купить этот курс - <a href="https://www.udemy.com/course/javascript_full/?admitad_uid=5abe7c00e547a094bf1f41e790c54432&amp;deal_code=&amp;publisher_id=1045339&amp;utm_campaign=Admitad-default&amp;utm_content=Textlink&amp;utm_medium=udemyads&amp;utm_source=aff-campaign&amp;utm_term=Homepage&amp;website_id=1118709">https://www.udemy.com/course/javascript_full/?admitad_uid=5abe7c00e547a094bf1f41e790c54432&amp;deal_code=&amp;publisher_id=1045339&amp;utm_campaign=Admitad-default&amp;utm_content=Textlink&amp;utm_medium=udemyads&amp;utm_source=aff-campaign&amp;utm_term=Homepage&amp;website_id=1118709</a></p>
+</li>
+<li>
+<p><a href="http://webmasters.teamdev.com/">http://webmasters.teamdev.com/</a> По верстке</p>
+</li>
+<li>
+<p><a href="https://stepik.org/course/38218/promo">https://stepik.org/course/38218/promo</a> Базовый курс по frontend</p>
+</li>
+<li>
+<p><a href="https://t.me/technobooks/322">https://t.me/technobooks/322</a> Говорят что неплохая книга</p>
+</li>
+<li>
+<p><a href="https://www.linkedin.com/feed/update/urn:li:activity:6790595510219640832/">https://www.linkedin.com/feed/update/urn:li:activity:6790595510219640832/</a> Хорошие варианты для первых проектов</p>
+</li>
+<li>
+<p><a href="http://ru.code-basics.com/languages/javascript">http://ru.code-basics.com/languages/javascript</a> Самые основы js</p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
